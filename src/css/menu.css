@@ -9,3 +9,18 @@ ul{
     flex-direction: row;
     justify-content: space-around;
 }
+
+.activeLink{
+    font-weight: bold;
+    color: #c56cf0;
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color:#c56cf0
+}

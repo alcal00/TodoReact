@@ -1,0 +1,13 @@
+.home{
+    margin-top: 200px;
+}
+
+.home h1{
+    font-weight: bolder;
+    font-size: 7em;
+    text-align: center;
+}
+
+.home span{
+    color: #c56cf0;
+}

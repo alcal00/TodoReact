@@ -1,0 +1,11 @@
+.todo-list{ 
+    margin-top: 100px;
+}
+.todo-list p{
+    margin: 8px;
+    padding: 10px;
+    font-size: larger;
+}
+.todo-list h1{
+    text-align: center;
+}

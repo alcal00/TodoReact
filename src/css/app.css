@@ -2,3 +2,6 @@
 @import './todoadd.css';
 @import './todolist.css';
 @import './home.css';
+span{
+    color: #c56cf0;
+}

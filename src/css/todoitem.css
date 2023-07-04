@@ -1,0 +1,28 @@
+.todo-item{
+    border: 3px solid #c56cf0;
+    margin: 10px;
+    border-radius:6px ;
+}
+
+.text-todo-item{
+    padding: 7px 10px;
+}
+
+.btn-delete{
+  
+    background-color: #af0303;
+    color: white;
+    padding: 7px 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius:6px ;
+    float: right;
+}
+
+input[type=checkbox]{
+    float: left;
+}
+#todocheckbox:checked{
+    color: #c56cf0;
+}

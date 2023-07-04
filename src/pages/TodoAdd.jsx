@@ -31,7 +31,7 @@ export function TodoAdd(props){
             <h1>Add a <span>Todo.</span></h1>
             <form className="form-todo-add" onSubmit={(evt) => handleSubmit(evt)}>
                 <label htmlFor="todotext">
-                    Enter entitile of your todo :
+                    Enter entitle of your todo :
                 </label>
                 <input type="text" name="todotext" id="todotext" value={todo.todotext} onChange={(evt) => handleChangeAddTodo(evt)}/>
                 <input type="submit" className="btn" value="Add Todo" />

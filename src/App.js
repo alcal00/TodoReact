@@ -5,6 +5,7 @@ import { TodoAdd } from "./pages/TodoAdd";
 import { TodoList } from "./pages/TodoList";
 import { Home } from "./pages/Home";
 import { useState } from "react";
+import {v4 as uuidv4, v4} from 'uuid'
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -13,7 +14,7 @@ function App() {
    * @param {{text: string}} todo 
    */
   function handleAddTodo(todo){
-    setTodos([...todos, todo])
+    setTodos([...todos, {...todo, todoid:uuidv4()}])
   }
   return (
     <div>
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/add" element={<TodoAdd handleAddTodo={handleAddTodo}/>}/>
-        <Route path="/list" element={<TodoList/>}/>
+        <Route path="/list" element={<TodoList todos={todos}/>}/>
       </Routes>
       
       

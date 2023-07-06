@@ -2,8 +2,10 @@
 export function Home(){
 
         return(
-            <div className="home">
-                <h1>Welcome to the <span>TodoList.</span></h1>
-            </div>
+           <div className="mt-40">
+             <h1 className="text-6xl font-bold text-center">Welcome to the <span>TodoList.</span></h1>
+           </div>
+           
+    
         )
 }

@@ -2,15 +2,16 @@ import { TodoItem } from "../components/TodoItem"
 
 export function TodoList(props) {
 
-    const { todos } = props
+    const { todos, handleDeleteTodo, handleCheckbox } = props
+    // const ReversedTodo = todos.slice().reverse()
 
     return (
-        <div className="todo-list">
-            <h1><span>Todo</span> List.</h1>
-            <p>Here is your to do list:</p>
+        <div className="mt-20">
+            <h1 className="text-3xl font-bold text-center"><span>Todo</span> List.</h1>
+            <p className="block mb-4 font-medium">Here is your to do list:</p>
             <div >
-                {todos.map((todo) => (
-                    <TodoItem todo={todo} key={todo.todoid}/>
+                {todos.slice().reverse().map((todo) => (
+                    <TodoItem todo={todo} key={todo.id} handleDeleteTodo={handleDeleteTodo} handleCheckbox={handleCheckbox}/>
                 )
                 )}
             </div>

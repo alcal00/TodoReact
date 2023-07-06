@@ -1,8 +1,6 @@
-@import './menu.css';
-@import './todoadd.css';
-@import './todolist.css';
-@import './home.css';
-@import './todoitem.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 span{
     color: #c56cf0;
 }

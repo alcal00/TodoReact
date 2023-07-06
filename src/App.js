@@ -5,14 +5,14 @@ import { TodoAdd } from "./pages/TodoAdd";
 import { TodoList } from "./pages/TodoList";
 import { Home } from "./pages/Home";
 import { useEffect, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 
 
 //import {v4 as uuidv4, v4} from 'uuid'
 
 function App() {
   const [todos, setTodos] = useState([])
- 
-
+  const [storedTodo, setStoredTodo] = useLocalStorage('todos',[])
   
   useEffect(() => {
     fetch("http://localhost:8000/todos", {
@@ -21,14 +21,22 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => setTodos(data))
+      .then(() => setTodos(storedTodo))
       .catch((error) => console.log(error));
+      
   }, []);
-  
+
+  useEffect(()=>{
+   console.log(todos)
+   setStoredTodo(todos)
+  },[todos])
+
   /**
    * @param {{text: string}} todo 
    */
   function handleAddTodo(todo){
     setTodos([...todos, {...todo, id:Date.now(), completed:false}])
+    
   }
   function handleDeleteTodo(id){
   setTodos(todos.filter(todo =>(todo.id !== id)))

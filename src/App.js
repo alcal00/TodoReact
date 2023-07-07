@@ -17,18 +17,18 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:8000/todos", {
       method: 'GET',
-      mode: 'cors'
+     // mode: 'cors'
     })
       .then((response) => response.json())
       .then((data) => setTodos(data))
-      .then(() => setTodos(storedTodo))
+      .then(() => setTodos(storedTodo))// on recupere les todos de localStorage
       .catch((error) => console.log(error));
       
   }, []);
 
   useEffect(()=>{
    console.log(todos)
-   setStoredTodo(todos)
+   setStoredTodo(todos) //on stocke todos dans localStorage
   },[todos])
 
   /**

@@ -17,7 +17,7 @@ function App() {
   const [storedTodo, setStoredTodo] = useLocalStorage('todos', [])
 
   useEffect(() => {
-    fetch("http://localhost:8000/todos", {
+    fetch("https://65c33f8939055e7482c06bc5.mockapi.io/todos", {
       method: 'GET',
       // mode: 'cors'
     })
@@ -36,7 +36,7 @@ function App() {
    * @param {{text: string}} todo 
    */
   async function handleAddTodo(todo) {
-    const response = await fetch("http://localhost:8000/todos", {
+    const response = await fetch("https://65c33f8939055e7482c06bc5.mockapi.io/todos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -47,7 +47,7 @@ function App() {
     setTodos([...todos, newTodo])
   }
   async function handleDeleteTodo(id) {
-    const response = await fetch(`http://localhost:8000/todos?id=${id}`, {
+    const response = await fetch(`https://65c33f8939055e7482c06bc5.mockapi.io/todos/${id}`, {
       method: "DELETE",
     })
       .then(() => {
@@ -59,7 +59,7 @@ function App() {
   }
 
   async function handleCheckbox(todoId, isChecked) {
-    await fetch(`http://localhost:8000/todos?id=${todoId}`, {
+    await fetch(`https://65c33f8939055e7482c06bc5.mockapi.io/todos/${todoId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
